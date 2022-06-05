@@ -111,7 +111,7 @@ const princesses = {
 app.get('/', (req,res)=> {
     res.sendFile(__dirname + '/index.html')
 })
-app.listen(PORT, () =>{
+app.listen(process.env.PORT || PORT, () =>{
     console.log(`Server is now running on Port ${PORT}`)
 })
 app.get('/api/:charactername', (req,res)=> {

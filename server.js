@@ -122,3 +122,6 @@ app.get('/api/:charactername', (req,res)=> {
         res.json({error : "not a character"})
     }
 })
+app.get('/api/', (req,res)=> {
+    res.json(princesses)
+})

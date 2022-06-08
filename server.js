@@ -139,7 +139,7 @@ app.get('/api/characterRole/:role', (req,res)=> {
     Object.keys(characters).forEach(char =>{
         characters[char].role.map(charRole => {
             if(charRole === roles){
-            charsWithRole.push(characters[char])
+            charsWithRole.push({char : characters[char]})
             }
         })
     })

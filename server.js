@@ -126,7 +126,7 @@ app.listen(process.env.PORT || PORT, () =>{
 app.get('/api/:charactername', (req,res)=> {
     console.log(req.params.charactername)
     const charactersname = req.params.charactername.toLowerCase()
-    if(characters.charactersname == true){
+    if(characters.charactersname !== undefined){
         res.json(characters[charactersname])
     }else {
         res.json({error : "not a character"})

@@ -14,7 +14,7 @@ const characters = {
                 nicknames: ['She-Ra Princess of Power','Princess Adora','Blondie','Dummy'],
                 image: 'https://static.wikia.nocookie.net/shera-and-the-princesses-of-power/images/a/a4/AdoraRender.png/revision/latest?cb=20181030172527',
                 powers: ['transformation', 'superhuman strength', 'superhuman agility', 'sword transformation','healing powers',
-            'animal transformation','energy blast', 'aura generation','animal magic','sword summoning','space survival' ],
+                'animal transformation','energy blast', 'aura generation','animal magic','sword summoning','space survival' ],
                 personality: `Adora is a brave, competitive, and noble warrior and is true to her own values. She's very strong as it's seen in an arm-wrestling match where she beats the well built and strong-arm wrestler, Sea Hawk. She is shown to be a leader in every group she joins.`
             
             },
@@ -143,13 +143,14 @@ app.listen(process.env.PORT || PORT, () =>{
     console.log(`Server is now running on Port ${PORT}`)
 })
 app.get('/api/:charactername', (req,res)=> {
+    console.log(req.params.charactername)
     const charactersname = req.params.charactername.toLowerCase()
-    if(princesses[charactersname]){
-        res.json(characters.princessAlliance[charactersname])
+    if(characters.charactersname == true){
+        res.json(characters[charactersname])
     }else {
         res.json({error : "not a character"})
     }
 })
-app.get('/api/princesses', (req,res)=> {
+app.get('/api/', (req,res)=> {
     res.json(characters.princessAlliance)
 })
